@@ -312,24 +312,26 @@
         );
         z-index: 1;
       }
-      .blog-section {
-        padding: 5rem 0;
+      .blog-slider {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
       }
-      .blog-section h2 {
-        font-size: 2.5rem;
-        font-weight: bold;
-        margin-bottom: 1.5rem;
+      .blog-slider-track {
+        display: flex;
+        width: 100%;
+        transition: transform 0.5s ease-in-out;
+      }
+      .blog-slider-list {
+        display: flex;
+        width: max-content;
       }
       .blog-card {
-        background-color: white;
-        border-radius: 10px;
-        padding: 1rem;
+        min-width: 300px;
+        margin-right: 20px;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        height: 100%;
-        transition: transform 0.3s ease;
-      }
-      .blog-card:hover {
-        transform: translateY(-10px);
+        border-radius: 10px;
+        overflow: hidden;
       }
       .blog-card img {
         width: 100%;
@@ -346,6 +348,27 @@
         font-size: 1.5rem;
         font-weight: 600;
         margin-bottom: 1rem;
+      }
+      .slider-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(255, 255, 255, 0.8);
+        border: none;
+        border-radius: 50%;
+        padding: 10px;
+        cursor: pointer;
+        z-index: 10;
+      }
+      .prev-btn {
+        left: 10px;
+      }
+      .next-btn {
+        right: 10px;
+      }
+      .slider-btn svg {
+        width: 24px;
+        height: 24px;
       }
       .faq-section {
         padding: 5rem 0;
@@ -682,64 +705,340 @@
 
     <!-- CTA Section -->
     <div class="container blog-section">
-      <div class="row text-center mb-5">
-        <div class="col-md-8 mx-auto">
-          <h2>
-            Check out our blog for more meditation, sleep, stress, and mental
-            health resources.
-          </h2>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4 mb-4">
-          <div class="blog-card">
-            <a href="/blog/staycation">
-              <img
-                src="https://images.squarespace-cdn.com/content/v1/656f4e4dababbd7c042c4946/1743809866863-0BJQ4OVHF7MU5IFAXV6E/staycation-1x1.jpg"
-                alt="Thumbnail for Are staycations *actually* better than vacations for real rest?"
-              />
-              <div>
-                <span class="category">Mental Health</span>
-                <h3>
-                  Are staycations *actually* better than vacations for real
-                  rest?
-                </h3>
-              </div>
-            </a>
+      <section class="container blog-section">
+        <div class="row text-center mb-5">
+          <div class="col-md-8 mx-auto">
+            <h2>
+              Check out our blog for more meditation, sleep, stress, and mental
+              health resources.
+            </h2>
           </div>
         </div>
-        <div class="col-md-4 mb-4">
-          <div class="blog-card">
-            <a href="/blog/work-life-balance">
-              <img
-                src="https://images.squarespace-cdn.com/content/v1/656f4e4dababbd7c042c4946/1743641883680-E589IY3H7PXVKUXJ4CAL/work-life+balance-1x1.jpg"
-                alt="Thumbnail for How to *actually* have a better work-life balance"
-              />
-              <div>
-                <span class="category">Workplace Wellness</span>
-                <h3>How to *actually* have a better work-life balance</h3>
+        <div class="blog-slider">
+          <button class="slider-btn prev-btn" aria-label="previous">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path>
+            </svg>
+          </button>
+          <div class="blog-slider-track">
+            <div class="blog-slider-list">
+              <div class="blog-card">
+                <a href="/blog/staycation">
+                  <img
+                    src="https://images.squarespace-cdn.com/content/v1/656f4e4dababbd7c042c4946/1743809866863-0BJQ4OVHF7MU5IFAXV6E/staycation-1x1.jpg"
+                    alt="Thumbnail for Are staycations *actually* better than vacations for real rest?"
+                  />
+                  <div>
+                    <span class="category">Mental Health</span>
+                    <h3>
+                      Are staycations *actually* better than vacations for real
+                      rest?
+                    </h3>
+                  </div>
+                </a>
               </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="blog-card">
-            <a href="/blog/menstrual-cycle-phases">
-              <img
-                src="https://images.squarespace-cdn.com/content/v1/656f4e4dababbd7c042c4946/1743641539635-94ZBWC3361FAADKWCXHA/menstrual+cycle+phases-1x1.jpg"
-                alt="Thumbnail for How the phases of your menstrual cycle affect mental health"
-              />
-              <div>
-                <span class="category">Women's Health</span>
-                <h3>
-                  How the phases of your menstrual cycle affect mental health
-                </h3>
+              <div class="blog-card">
+                <a href="/blog/work-life-balance">
+                  <img
+                    src="https://images.squarespace-cdn.com/content/v1/656f4e4dababbd7c042c4946/1743641883680-E589IY3H7PXVKUXJ4CAL/work-life+balance-1x1.jpg"
+                    alt="Thumbnail for How to *actually* have a better work-life balance"
+                  />
+                  <div>
+                    <span class="category">Workplace Wellness</span>
+                    <h3>How to *actually* have a better work-life balance</h3>
+                  </div>
+                </a>
               </div>
-            </a>
+              <div class="blog-card">
+                <a href="/blog/menstrual-cycle-phases">
+                  <img
+                    src="https://images.squarespace-cdn.com/content/v1/656f4e4dababbd7c042c4946/1743641539635-94ZBWC3361FAADKWCXHA/menstrual+cycle+phases-1x1.jpg"
+                    alt="Thumbnail for How the phases of your menstrual cycle affect mental health"
+                  />
+                  <div>
+                    <span class="category">Women's Health</span>
+                    <h3>
+                      How the phases of your menstrual cycle affect mental
+                      health
+                    </h3>
+                  </div>
+                </a>
+              </div>
+              <div class="blog-card">
+                <a href="/blog/how-to-communicate-better">
+                  <img
+                    src="https://images.squarespace-cdn.com/content/v1/656f4e4dababbd7c042c4946/1743810305641-AA921KI1PZH2DO8PT6XD/how+to+communicate+better-1x1.jpg"
+                    alt="Thumbnail for How to communicate better with all the people in your life"
+                  />
+                  <div>
+                    <span class="category">Relationships</span>
+                    <h3>
+                      How to communicate better with all the people in your life
+                    </h3>
+                  </div>
+                </a>
+              </div>
+              <div class="blog-card">
+                <a href="/blog/tonglen-meditation">
+                  <img
+                    src="https://images.squarespace-cdn.com/content/v1/656f4e4dababbd7c042c4946/1744162528720-D3COT57SGGOIZ4WJQPAS/tonglen+meditation-1x1.jpg"
+                    alt="Thumbnail for What is Tonglen meditation? A guide to getting started"
+                  />
+                  <div>
+                    <span class="category">Meditation & Mindfulness</span>
+                    <h3>
+                      What is Tonglen meditation? A guide to getting started
+                    </h3>
+                  </div>
+                </a>
+              </div>
+              <div class="blog-card">
+                <a href="/blog/motherhood-and-loneliness">
+                  <img
+                    src="https://images.squarespace-cdn.com/content/v1/656f4e4dababbd7c042c4946/1744162971914-LLJVOV4O2JIJA0D4J5FJ/%28TS%29+motherhood+and+loneliness-1x1.jpg"
+                    alt="Thumbnail for Why loneliness is so common in motherhood (and how to cope)"
+                  />
+                  <div>
+                    <span class="category">Women's Health, Mental Health</span>
+                    <h3>
+                      Why loneliness is so common in motherhood (and how to
+                      cope)
+                    </h3>
+                  </div>
+                </a>
+              </div>
+              <div class="blog-card">
+                <a href="/blog/enfp">
+                  <img
+                    src="https://images.squarespace-cdn.com/content/v1/656f4e4dababbd7c042c4946/1743747462433-BBC29D9ELNI3NJU0W8MM/ENFP-1x1.jpg"
+                    alt="Thumbnail for 10 characteristics of the campaigner personality type (ENFP)"
+                  />
+                  <div>
+                    <span class="category">Personal Growth</span>
+                    <h3>
+                      10 characteristics of the campaigner personality type
+                      (ENFP)
+                    </h3>
+                  </div>
+                </a>
+              </div>
+              <div class="blog-card">
+                <a href="/blog/sleep-walking">
+                  <img
+                    src="https://images.squarespace-cdn.com/content/v1/656f4e4dababbd7c042c4946/1743747786997-HCVL45TTYMWU5REXMXNG/sleep+walking-1x1.jpg"
+                    alt="Thumbnail for What is sleepwalking? Plus, 7 tips to help you manage it"
+                  />
+                  <div>
+                    <span class="category">Sleep</span>
+                    <h3>
+                      What is sleepwalking? Plus, 7 tips to help you manage it
+                    </h3>
+                  </div>
+                </a>
+              </div>
+              <div class="blog-card">
+                <a href="/blog/alzheimers-disease-more-women-or-more-men">
+                  <img
+                    src="https://images.squarespace-cdn.com/content/v1/656f4e4dababbd7c042c4946/1743747105756-J2LPME1OJFXT2J6IZ3WU/alzheimer%27s+disease+more+women+or+more+men-1x1.jpg"
+                    alt="Thumbnail for Is dementia more common in men or women? Here’s what to know"
+                  />
+                  <div>
+                    <span class="category">Stress & Anxiety</span>
+                    <h3>
+                      Is dementia more common in men or women? Here’s what to
+                      know
+                    </h3>
+                  </div>
+                </a>
+              </div>
+              <div class="blog-card">
+                <a href="/blog/mothers-day-wishes">
+                  <img
+                    src="https://images.squarespace-cdn.com/content/v1/656f4e4dababbd7c042c4946/1744688030594-R4HN0WWSSE0TDD7YZBFF/mother%27s+day+wishes-1x1.jpg"
+                    alt="Thumbnail for 80 heartfelt Mother’s Day wishes for all the moms in your life"
+                  />
+                  <div>
+                    <span class="category">Women's Health</span>
+                    <h3>
+                      80 heartfelt Mother’s Day wishes for all the moms in your
+                      life
+                    </h3>
+                  </div>
+                </a>
+              </div>
+              <div class="blog-card">
+                <a href="/blog/motherhood-penalty">
+                  <img
+                    src="https://images.squarespace-cdn.com/content/v1/656f4e4dababbd7c042c4946/1744336197026-CL1JEF4SLN7G3OKSOP4E/%28TS%29+motherhood+penalty-1x1.jpg"
+                    alt="Thumbnail for What is the motherhood penalty? Plus, 10 tips to avoid it"
+                  />
+                  <div>
+                    <span class="category">Women's Health</span>
+                    <h3>
+                      What is the motherhood penalty? Plus, 10 tips to avoid it
+                    </h3>
+                  </div>
+                </a>
+              </div>
+              <div class="blog-card">
+                <a href="/blog/sad-on-mothers-day">
+                  <img
+                    src="https://images.squarespace-cdn.com/content/v1/656f4e4dababbd7c042c4946/1744336858339-S64R78HO4XK12PBUGAGE/sad+on+Mother%27s+Day-1x1.jpg"
+                    alt="Thumbnail for Feeling sad on Mother’s Day? These 11 tips can help you cope"
+                  />
+                  <div>
+                    <span class="category">Women's Health, Mental Health</span>
+                    <h3>
+                      Feeling sad on Mother’s Day? These 11 tips can help you
+                      cope
+                    </h3>
+                  </div>
+                </a>
+              </div>
+              <div class="blog-card">
+                <a href="/blog/good-enough-mother">
+                  <img
+                    src="https://images.squarespace-cdn.com/content/v1/656f4e4dababbd7c042c4946/1744336521180-IQHP99017JC3H8WX0KM6/%28TS%29+good+enough+mother-1x1.jpg"
+                    alt="Thumbnail for What is a good enough mother (and why you might want to be one)"
+                  />
+                  <div>
+                    <span class="category">Women's Health</span>
+                    <h3>
+                      What is a good enough mother (and why you might want to be
+                      one)
+                    </h3>
+                  </div>
+                </a>
+              </div>
+              <div class="blog-card">
+                <a href="/blog/mom-burnout">
+                  <img
+                    src="https://images.squarespace-cdn.com/content/v1/656f4e4dababbd7c042c4946/1744240563358-0OTQNZMG6JAEFEO4B4J0/%28TS%29+mom+burnout-1x1.jpg"
+                    alt="Thumbnail for How to know if you're facing mom burnout (and 16 tips to cope)"
+                  />
+                  <div>
+                    <span class="category">Women's Health, Mental Health</span>
+                    <h3>
+                      How to know if you're facing mom burnout (and 16 tips to
+                      cope)
+                    </h3>
+                  </div>
+                </a>
+              </div>
+              <div class="blog-card">
+                <a href="/blog/overwhelmed-mom">
+                  <img
+                    src="https://images.squarespace-cdn.com/content/v1/656f4e4dababbd7c042c4946/1744239620793-X9K9L7UVU1C48UNX5K8O/%28TS%29+overwhelmed+mom-1x1.jpg"
+                    alt="Thumbnail for 17 tips all overwhelmed moms need to help them cope&nbsp;"
+                  />
+                  <div>
+                    <span class="category">Women's Health, Mental Health</span>
+                    <h3>
+                      17 tips all overwhelmed moms need to help them cope&nbsp;
+                    </h3>
+                  </div>
+                </a>
+              </div>
+              <div class="blog-card">
+                <a href="/blog/mom-rage">
+                  <img
+                    src="https://images.squarespace-cdn.com/content/v1/656f4e4dababbd7c042c4946/1744240060103-EBFI84RFMGCMDCOT7YA8/%28TS%29+mom+rage-1x1.jpg"
+                    alt="Thumbnail for 11 ways to deal with mom rage without the shame spiral"
+                  />
+                  <div>
+                    <span class="category">Women's Health, Mental Health</span>
+                    <h3>
+                      11 ways to deal with mom rage without the shame spiral
+                    </h3>
+                  </div>
+                </a>
+              </div>
+              <div class="blog-card">
+                <a href="/blog/trying-to-conceive-mental-health">
+                  <img
+                    src="https://images.squarespace-cdn.com/content/v1/656f4e4dababbd7c042c4946/1743560955136-IIVMHFTO4PPRSCH1GIBS/trying+to+conceive+mental+health-1x1.jpg"
+                    alt="Thumbnail for Trying to conceive? 12 tips to keep your mental health intact"
+                  />
+                  <div>
+                    <span class="category">Women's Health</span>
+                    <h3>
+                      Trying to conceive? 12 tips to keep your mental health
+                      intact
+                    </h3>
+                  </div>
+                </a>
+              </div>
+              <div class="blog-card">
+                <a href="/blog/stress-bragging">
+                  <img
+                    src="https://images.squarespace-cdn.com/content/v1/656f4e4dababbd7c042c4946/1743532470361-JSHD3UVUZZXRW1KCZA87/stress+bragging-1x1.jpg"
+                    alt="Thumbnail for Yes, stress bragging is a thing. Here's why you should avoid it"
+                  />
+                  <div>
+                    <span class="category">Stress & Anxiety</span>
+                    <h3>
+                      Yes, stress bragging is a thing. Here's why you should
+                      avoid it
+                    </h3>
+                  </div>
+                </a>
+              </div>
+              <div class="blog-card">
+                <a href="/blog/medical-gaslighting">
+                  <img
+                    src="https://images.squarespace-cdn.com/content/v1/656f4e4dababbd7c042c4946/1743210888255-CISRBZBLKMOSJQ9Y91K7/Medical+gaslighting-1x1.jpg"
+                    alt="Thumbnail for How to spot medical gaslighting (and 10 tips to self-advocate)"
+                  />
+                  <div>
+                    <span class="category"
+                      >Mental Health, Physical Wellbeing</span
+                    >
+                    <h3>
+                      How to spot medical gaslighting (and 10 tips to
+                      self-advocate)
+                    </h3>
+                  </div>
+                </a>
+              </div>
+              <div class="blog-card">
+                <a href="/blog/questions-for-kids">
+                  <img
+                    src="https://images.squarespace-cdn.com/content/v1/656f4e4dababbd7c042c4946/1743531585982-HYO56LX13F3FXCUJB2E9/questions+for+kids-1x1.jpg"
+                    alt="Thumbnail for 101 fun questions to ask your kid to strengthen your bond"
+                  />
+                  <div>
+                    <span class="category">Relationships</span>
+                    <h3>
+                      101 fun questions to ask your kid to strengthen your bond
+                    </h3>
+                  </div>
+                </a>
+              </div>
+            </div>
           </div>
+          <button class="slider-btn next-btn" aria-label="next">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"></path>
+            </svg>
+          </button>
         </div>
-        <!-- Add more blog cards as needed -->
-      </div>
+        <div class="text-center mt-4">
+          <a href="https://calm.com/blog" class="btn btn-primary"
+            >See all blogs</a
+          >
+        </div>
+      </section>
+
       <div class="text-center mt-4">
         <a href="https://calm.com/blog" class="btn btn-primary"
           >See all blogs</a
@@ -1512,7 +1811,6 @@
       </div>
     </div>
 
-    <!-- Footer -->
     <footer class="footer bg-dark text-white pt-5">
       <div class="container">
         <div class="row">
@@ -1695,11 +1993,42 @@
       </div>
     </footer>
 
-    <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Custom JavaScript for Navbar Scroll Effect and FAQ Arrow Rotation -->
     <script>
+      const sliderTrack = document.querySelector(".blog-slider-track");
+      const sliderList = document.querySelector(".blog-slider-list");
+      const prevBtn = document.querySelector(".prev-btn");
+      const nextBtn = document.querySelector(".next-btn");
+      const blogCards = document.querySelectorAll(".blog-card");
+      const cardWidth = blogCards[0].offsetWidth + 20; // Include margin
+      let currentIndex = 0;
+
+      const updateSlider = () => {
+        const translateX = -currentIndex * cardWidth;
+        sliderTrack.style.transform = `translateX(${translateX}px)`;
+      };
+
+      prevBtn.addEventListener("click", () => {
+        if (currentIndex > 0) {
+          currentIndex--;
+          updateSlider();
+        }
+      });
+
+      nextBtn.addEventListener("click", () => {
+        if (currentIndex < blogCards.length - 3) {
+          currentIndex++;
+          updateSlider();
+        }
+      });
+
+      window.addEventListener("resize", () => {
+        const newCardWidth = blogCards[0].offsetWidth + 20; // Include margin
+        if (newCardWidth !== cardWidth) {
+          cardWidth = newCardWidth;
+          updateSlider();
+        }
+      });
       document.addEventListener("DOMContentLoaded", function () {
         const faqQuestions = document.querySelectorAll(".faq-question");
         faqQuestions.forEach((question) => {
