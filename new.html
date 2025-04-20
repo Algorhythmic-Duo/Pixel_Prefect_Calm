@@ -312,20 +312,27 @@
         );
         z-index: 1;
       }
+      .blog-section {
+        padding: 5rem 0;
+      }
+
       .blog-slider {
         position: relative;
         width: 100%;
         overflow: hidden;
       }
+
       .blog-slider-track {
         display: flex;
         width: 100%;
         transition: transform 0.5s ease-in-out;
       }
+
       .blog-slider-list {
         display: flex;
         width: max-content;
       }
+
       .blog-card {
         min-width: 300px;
         margin-right: 20px;
@@ -333,22 +340,26 @@
         border-radius: 10px;
         overflow: hidden;
       }
+
       .blog-card img {
         width: 100%;
         height: auto;
         border-radius: 10px;
       }
+
       .blog-card .category {
         font-size: 1rem;
         font-weight: 600;
         margin-bottom: 0.5rem;
         color: #304e6c;
       }
+
       .blog-card h3 {
         font-size: 1.5rem;
         font-weight: 600;
         margin-bottom: 1rem;
       }
+
       .slider-btn {
         position: absolute;
         top: 50%;
@@ -360,16 +371,20 @@
         cursor: pointer;
         z-index: 10;
       }
+
       .prev-btn {
         left: 10px;
       }
+
       .next-btn {
         right: 10px;
       }
+
       .slider-btn svg {
         width: 24px;
         height: 24px;
       }
+
       .faq-section {
         padding: 5rem 0;
       }
@@ -427,6 +442,201 @@
         text-align: left;
         actualwidth: 1168;
         actualheight: 34;
+      }
+      .free-trial-section {
+        text-align: center;
+        padding: 2rem;
+        background-image: url("blue-wave-bg.webp");
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-size: cover;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .free-trial-title {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+
+      .free-trial-plans {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+      }
+
+      .free-trial-plan {
+        margin: 0 1rem;
+      }
+
+      .plan-button {
+        background-color: #fff;
+        border: 2px solid #304e6c;
+        border-radius: 10px;
+        padding: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+
+      .plan-button:hover {
+        background-color: #304e6c;
+        color: #fff;
+        transform: translateY(-2px);
+      }
+
+      .plan-details {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .plan-info {
+        margin-right: 1rem;
+      }
+
+      .plan-info span {
+        display: block;
+      }
+
+      .plan-info span:first-child {
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+
+      .plan-info span:last-child {
+        font-size: 1rem;
+        color: #304e6c;
+      }
+
+      .plan-price {
+        font-size: 1.2rem;
+        color: #304e6c;
+      }
+
+      .plan-trial {
+        margin-top: 0.5rem;
+      }
+
+      .plan-trial span {
+        font-size: 1rem;
+        color: #304e6c;
+      }
+
+      .free-trial-description {
+        font-size: 1rem;
+        color: #424242;
+        margin-bottom: 1.5rem;
+      }
+
+      .free-trial-description a {
+        color: #304e6c;
+        text-decoration: none;
+      }
+
+      .free-trial-description a:hover {
+        text-decoration: underline;
+      }
+
+      .continue-button {
+        background-color: #304e6c;
+        color: #fff;
+        border: none;
+        border-radius: 50px;
+        padding: 0.75rem 2rem;
+        font-weight: 600;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+
+      .continue-button:hover {
+        background-color: #2a4259;
+        transform: translateY(-2px);
+      }
+      .testimonial-section {
+        padding: 60px 0;
+      }
+
+      .testimonial-heading {
+        color: #214c79;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .testimonial-card {
+        background: linear-gradient(135deg, #3a75b0 0%, #6a5cb3 100%);
+        border-radius: 15px;
+        padding: 40px;
+        color: white;
+        height: 100%;
+        position: relative;
+      }
+
+      .quote-icon {
+        font-size: 60px;
+        line-height: 1;
+        opacity: 0.2;
+        margin-bottom: 10px;
+      }
+
+      .testimonial-text {
+        font-size: 18px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+      }
+
+      .testimonial-author {
+        font-size: 14px;
+        opacity: 0.9;
+      }
+
+      .star-rating {
+        color: #f8d22d;
+        font-size: 24px;
+        letter-spacing: 2px;
+      }
+
+      .carousel-control-prev,
+      .carousel-control-next {
+        width: 40px;
+        height: 40px;
+        background: #fff;
+        border-radius: 50%;
+        opacity: 1;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .carousel-control-prev {
+        left: -20px;
+      }
+
+      .carousel-control-next {
+        right: -20px;
+      }
+
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        width: 24px;
+        height: 24px;
+      }
+
+      .carousel-control-next-icon {
+        transform: rotate(180deg);
+      }
+
+      @media (max-width: 767px) {
+        .carousel-control-prev {
+          left: 10px;
+        }
+
+        .carousel-control-next {
+          right: 10px;
+        }
       }
     </style>
   </head>
@@ -670,40 +880,191 @@
             </p>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-4 mb-4">
-            <div class="testimonial-card">
-              <div class="testimonial-text">
-                "Calm has transformed my sleep routine. I fall asleep faster and
-                wake up feeling more rested. The Sleep Stories are amazing!"
+      </div>
+    </section>
+    <div class="container testimonial-section">
+      <h2 class="testimonial-heading">Over 2 million 5-star reviews.</h2>
+
+      <div
+        id="testimonialCarousel"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-md-6 mb-4">
+                <div class="testimonial-card">
+                  <div class="quote-icon">"</div>
+                  <p class="testimonial-text">
+                    When I cannot fall asleep, I turn on this app and am out
+                    within 5 minutes.
+                  </p>
+                  <p class="testimonial-author">Brandy from Houston</p>
+                  <div class="star-rating">★★★★★</div>
+                </div>
               </div>
-              <div class="testimonial-author">- Sarah M.</div>
+              <div class="col-md-6 mb-4">
+                <div class="testimonial-card">
+                  <div class="quote-icon">"</div>
+                  <p class="testimonial-text">
+                    I have a very busy brain and can find it hard to unwind. Now
+                    a daily practice is actually so wonderful and healing for
+                    me.
+                  </p>
+                  <p class="testimonial-author">John from Chicago</p>
+                  <div class="star-rating">★★★★★</div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="col-md-4 mb-4">
-            <div class="testimonial-card">
-              <div class="testimonial-text">
-                "As someone who struggles with anxiety, the guided meditations
-                have been a game-changer for me. I use Calm daily and feel so
-                much better."
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-md-6 mb-4">
+                <div class="testimonial-card">
+                  <div class="quote-icon">"</div>
+                  <p class="testimonial-text">
+                    Calm has changed my life in immeasurable ways. I am more
+                    resilient and feel so much more connected to myself.
+                  </p>
+                  <p class="testimonial-author">Allison from San Jose</p>
+                  <div class="star-rating">★★★★★</div>
+                </div>
               </div>
-              <div class="testimonial-author">- David L.</div>
+              <div class="col-md-6 mb-4">
+                <div class="testimonial-card">
+                  <div class="quote-icon">"</div>
+                  <p class="testimonial-text">
+                    Whenever I need to unwind from a stressful work day I
+                    meditate with Calm's soundscapes and it automatically sends
+                    me to my happy place.
+                  </p>
+                  <p class="testimonial-author">Jasmine from Bend</p>
+                  <div class="star-rating">★★★★★</div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="col-md-4 mb-4">
-            <div class="testimonial-card">
-              <div class="testimonial-text">
-                "The focus music helps me stay productive at work, and the
-                meditation sessions help me unwind at night. Perfect balance!"
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-md-6 mb-4">
+                <div class="testimonial-card">
+                  <div class="quote-icon">"</div>
+                  <p class="testimonial-text">
+                    My family loves Calm! Out of the three meditation apps I
+                    have on my phone, Calm is the one I actually use.
+                  </p>
+                  <p class="testimonial-author">Kristie from Irvine</p>
+                  <div class="star-rating">★★★★★</div>
+                </div>
               </div>
-              <div class="testimonial-author">- Jennifer K.</div>
+              <div class="col-md-6 mb-4">
+                <div class="testimonial-card">
+                  <div class="quote-icon">"</div>
+                  <p class="testimonial-text">
+                    Calm cuts through my stress, anxiety, irregular sleep
+                    schedule and brings me to deep sleep. I usually fall asleep
+                    within 5 minutes.
+                  </p>
+                  <p class="testimonial-author">Mathieu from New Orleans</p>
+                  <div class="star-rating">★★★★★</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- CTA Section -->
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#testimonialCarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#000000"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+          </span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#testimonialCarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#000000"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+          </span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+    <div class="free-trial-section">
+      <h2 class="free-trial-title">
+        Start your free trial of<br />Calm Premium.
+      </h2>
+      <ul class="free-trial-plans">
+        <li class="free-trial-plan">
+          <button
+            class="plan-button"
+            role="radio"
+            name="plan sku"
+            aria-checked="true"
+            type="button"
+            tabindex="0"
+          >
+            <div class="plan-details">
+              <div class="plan-info">
+                <span>Yearly<br /></span>
+                <span>$49.99/yr.</span>
+              </div>
+              <div class="plan-price">$4.17/mo.</div>
+            </div>
+            <div class="plan-trial">
+              <span>14-Day Free Trial</span>
+            </div>
+          </button>
+        </li>
+      </ul>
+      <p class="free-trial-description">
+        After your free trial, the yearly subscription is $49.99 and
+        automatically renews each year until cancelled.&nbsp;
+        <a href="/terms" target="_blank" rel="noreferrer">Terms</a>&nbsp;|&nbsp;
+        <a
+          href="https://support.calm.com/hc/en-us/articles/115002473607-How-to-turn-off-auto-renewal-or-cancel-my-subscription"
+          target="_blank"
+          rel="noreferrer"
+          >Cancel anytime</a
+        >
+      </p>
+      <button class="continue-button" type="button" tabindex="0">
+        Continue
+      </button>
+    </div>
+
     <div class="container blog-section">
       <section class="container blog-section">
         <div class="row text-center mb-5">
@@ -1995,40 +2356,43 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>
-      const sliderTrack = document.querySelector(".blog-slider-track");
-      const sliderList = document.querySelector(".blog-slider-list");
-      const prevBtn = document.querySelector(".prev-btn");
-      const nextBtn = document.querySelector(".next-btn");
-      const blogCards = document.querySelectorAll(".blog-card");
-      const cardWidth = blogCards[0].offsetWidth + 20; // Include margin
-      let currentIndex = 0;
+      document.addEventListener("DOMContentLoaded", function () {
+        const sliderTrack = document.querySelector(".blog-slider-track");
+        const sliderList = document.querySelector(".blog-slider-list");
+        const prevBtn = document.querySelector(".prev-btn");
+        const nextBtn = document.querySelector(".next-btn");
+        const blogCards = document.querySelectorAll(".blog-card");
+        const cardWidth = blogCards[0].offsetWidth + 20; // Include margin
+        let currentIndex = 0;
 
-      const updateSlider = () => {
-        const translateX = -currentIndex * cardWidth;
-        sliderTrack.style.transform = `translateX(${translateX}px)`;
-      };
+        const updateSlider = () => {
+          const translateX = -currentIndex * cardWidth;
+          sliderTrack.style.transform = `translateX(${translateX}px)`;
+        };
 
-      prevBtn.addEventListener("click", () => {
-        if (currentIndex > 0) {
-          currentIndex--;
-          updateSlider();
-        }
+        prevBtn.addEventListener("click", () => {
+          if (currentIndex > 0) {
+            currentIndex--;
+            updateSlider();
+          }
+        });
+
+        nextBtn.addEventListener("click", () => {
+          if (currentIndex < blogCards.length - 3) {
+            currentIndex++;
+            updateSlider();
+          }
+        });
+
+        window.addEventListener("resize", () => {
+          const newCardWidth = blogCards[0].offsetWidth + 20; // Include margin
+          if (newCardWidth !== cardWidth) {
+            cardWidth = newCardWidth;
+            updateSlider();
+          }
+        });
       });
 
-      nextBtn.addEventListener("click", () => {
-        if (currentIndex < blogCards.length - 3) {
-          currentIndex++;
-          updateSlider();
-        }
-      });
-
-      window.addEventListener("resize", () => {
-        const newCardWidth = blogCards[0].offsetWidth + 20; // Include margin
-        if (newCardWidth !== cardWidth) {
-          cardWidth = newCardWidth;
-          updateSlider();
-        }
-      });
       document.addEventListener("DOMContentLoaded", function () {
         const faqQuestions = document.querySelectorAll(".faq-question");
         faqQuestions.forEach((question) => {
