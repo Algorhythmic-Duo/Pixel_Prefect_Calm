@@ -866,6 +866,80 @@
         transition-behavior: normal;
         cursor: pointer;
       }
+      .new-feature {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        background-color: rgb(31, 102, 201);
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        transition: transform 0.3s ease, background-color 0.3s ease,
+          border-color 0.3s ease;
+        z-index: 100;
+      }
+
+      .new-feature:hover {
+        transform: scale(1.05);
+        background-color: rgb(31, 102, 201);
+      }
+
+      .new-feature i {
+        font-size: 24px;
+        color: white;
+      }
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .rotating {
+        animation: rotate 4s linear infinite;
+      }
+
+      .message {
+        position: fixed;
+        bottom: 90px;
+        right: 24px;
+        background: rgba(38, 43, 49, 0.9);
+        color: #ffffff;
+        padding: 16px 20px;
+        border-radius: 8px;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        pointer-events: none;
+        font-weight: 400;
+        letter-spacing: 0.3px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        max-width: 300px;
+        text-align: center;
+        line-height: 1.5;
+      }
+
+      .message.show {
+        opacity: 1;
+      }
+
+      .meditation-quote {
+        font-style: italic;
+        font-size: 15px;
+      }
+
+      .now-playing {
+        font-size: 12px;
+        opacity: 0.8;
+        margin-top: 8px;
+      }
     </style>
   </head>
   <body>
@@ -2736,6 +2810,21 @@
         </div>
       </div>
     </footer>
+    <div>
+      <div class="message" id="actionMessage">
+        <div class="meditation-quote" id="meditationQuote"></div>
+        <div class="now-playing" id="nowPlaying"></div>
+      </div>
+
+      <div class="new-feature" id="sunButton">
+        <i class="fas fa-sun" id="sunIcon"></i>
+      </div>
+
+      <audio id="calmMusic" loop>
+        <source src="song.mp3" />
+        Your browser does not support the audio element.
+      </audio>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>
@@ -2796,6 +2885,91 @@
           navbar.classList.add("navbar-scrolled");
         } else {
           navbar.classList.remove("navbar-scrolled");
+        }
+      });
+      const sunButton = document.getElementById("sunButton");
+      const sunIcon = document.getElementById("sunIcon");
+      const actionMessage = document.getElementById("actionMessage");
+      const meditationQuote = document.getElementById("meditationQuote");
+      const nowPlaying = document.getElementById("nowPlaying");
+      const calmMusic = document.getElementById("calmMusic");
+      let isActive = false;
+
+      const meditationQuotes = [
+        "Breathe in peace, breathe out tension.",
+        "The present moment is filled with joy and happiness. If you are attentive, you will see it.",
+        "Silence is not empty, it's full of answers.",
+        "Your calm mind is the ultimate weapon against your challenges.",
+        "Within you, there is a stillness and sanctuary to which you can retreat at any time.",
+        "Peace comes from within. Do not seek it without.",
+        "Meditation is not evasion; it is a serene encounter with reality.",
+        "Be where you are; otherwise, you will miss your life.",
+        "The quieter you become, the more you can hear.",
+        "Your mind will answer most questions if you learn to relax and wait for the answer.",
+        "In the midst of movement and chaos, keep stillness inside of you.",
+        "To understand the immeasurable, the mind must be extraordinarily quiet, still.",
+        "Quiet the mind, and the soul will speak.",
+        "Look within. Be still. Free from fear and attachment.",
+        "The best meditation is effortless. The best meditation is a gentle awareness.",
+      ];
+      const musicTracks = ["song.mp3"];
+
+      function getRandomItem(array) {
+        return array[Math.floor(Math.random() * array.length)];
+      }
+
+      sunButton.addEventListener("click", function () {
+        isActive = !isActive;
+
+        if (isActive) {
+          // Start rotation
+          sunIcon.classList.add("rotating");
+
+          // Show random meditation quote
+          const randomQuote = getRandomItem(meditationQuotes);
+          meditationQuote.textContent = randomQuote;
+
+          // Select random music track
+          const randomTrack = getRandomItem(musicTracks);
+          nowPlaying.textContent = `Now playing: ${randomTrack.title} by ${randomTrack.artist}`;
+
+          try {
+            calmMusic.play();
+          } catch (e) {
+            console.log(
+              "Audio couldn't autoplay - would require user interaction first in a real browser"
+            );
+          }
+
+          document.body.style.backgroundColor = "#1c2025";
+          sunButton.style.borderColor = "#69b6ff";
+        } else {
+          // Stop rotation
+          sunIcon.classList.remove("rotating");
+
+          meditationQuote.textContent =
+            "Meditation ended. Find peace in every moment.";
+          nowPlaying.textContent = "";
+
+          // Pause music
+          calmMusic.pause();
+
+          document.body.style.backgroundColor = "#2c3338";
+          sunButton.style.borderColor = "#3b4046";
+        }
+
+        // Show message
+        actionMessage.classList.add("show");
+
+        // Hide message after 6 seconds for meditation quotes (longer to read)
+        if (isActive) {
+          setTimeout(function () {
+            actionMessage.classList.remove("show");
+          }, 6000);
+        } else {
+          setTimeout(function () {
+            actionMessage.classList.remove("show");
+          }, 3000);
         }
       });
     </script>
